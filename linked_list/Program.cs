@@ -19,7 +19,28 @@ namespace linked_list
             {
                 Console.Write(item + " ");
             }
+
+            Console.WriteLine(System.Environment.NewLine);
+
+            l1.Del(3);
+            foreach (var item in l1)
+            {
+                Console.Write(item + " ");
+            }
+
+            Console.WriteLine(System.Environment.NewLine);
+
+
+            l1.AddToHead(10);
+            l1.AddAfterItem(4, 11);
+
+            foreach (var item in l1)
+            {
+                Console.Write(item + " ");
+            }
+
             Console.ReadLine();
+
         }
     }
 }

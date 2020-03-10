@@ -11,9 +11,7 @@ namespace linked_list.Model
 
         public LinkedList()
         {
-            Head = null;
-            Tail = null;
-            Count = 0;
+            Clear();
         }
 
         public LinkedList(T Data)
@@ -35,6 +33,44 @@ namespace linked_list.Model
             {
                 SetHeadAndTail(data);
             }
+        }
+
+        public void AddToHead(T data)
+        {
+            if(Head != null)
+            {
+                Item<T> item = new Item<T>(data);
+                item.Next = Head;
+                Head = item;
+                Count += 1;
+
+            }
+        }
+
+        public void AddAfterItem(T elem, T data) //elem - элемент, после которого добавляем, data - то, что добавляем
+        {
+            if (Head.Next != null)
+            {
+
+                var current = Head;
+                while(current != null)
+                {
+                    if(current.Data.Equals(elem))
+                    {
+                        var item = new Item<T>(data);
+                        item.Next = current.Next;
+                        current.Next = item;
+                        Count += 1;
+                        return;
+                    }
+                    else
+                    {
+                        current = current.Next;
+                    }
+                }
+
+            }
+
         }
 
         public void Del(T data)
@@ -80,6 +116,13 @@ namespace linked_list.Model
             Tail = item;
             Count = 1;
 
+        }
+
+        public void Clear()
+        {
+            Head = null;
+            Tail = null;
+            Count = 0;
         }
 
         public IEnumerator GetEnumerator()
