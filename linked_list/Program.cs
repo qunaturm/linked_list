@@ -14,10 +14,13 @@ namespace linked_list
             l1.Add(2);
             l1.Add(3);
             l1.Add(4);
-            Console.WriteLine(l1.Head);
-            Console.WriteLine(l1.Tail);
-            Console.WriteLine(l1.Count);
-            Console.ReadLine();
+            l1.Add(5);
+            l1.Add(6);
+            for (int i = 0; i < 6; ++i)
+            {
+                Console.WriteLine(l1.Head);
+                l1.Del(i);
+            }
 
         }
     }
