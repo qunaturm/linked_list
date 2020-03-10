@@ -17,7 +17,7 @@ namespace linked_list.Model
 
         public LinkedList(T Data)
         {
-            Item<T> item = new Item<T>(Data); // or var itm = new Item<T>(Data);
+            Item<T> item = new Item<T>(Data); // or var item = new Item<T>(Data);
             SetHeadAndTail(Data);
         }
 
@@ -35,6 +35,42 @@ namespace linked_list.Model
                 SetHeadAndTail(data);
             }
         }
+
+        public void Del(T data)
+        {
+            if (Head != null)
+            {
+
+                if (Head.Data.Equals(data))
+                {
+                    Head = Head.Next;
+                    Count -= 1;
+                    return;
+                }
+
+                Item<T> current = Head.Next; //or var current = Head;
+                Item<T> prev = Head;
+
+               while(current != null)
+                {
+                    if (current.Data.Equals(data))
+                    {
+                        prev.Next = current.Next;
+                        Count -= 1;
+                        return;
+                    }
+                    else
+                    {
+                        prev = current;
+                        current = current.Next;
+
+                    }
+                }
+                
+            }
+
+        }
+
         private void SetHeadAndTail(T data)
         {
             Item<T> item = new Item<T>(data);
