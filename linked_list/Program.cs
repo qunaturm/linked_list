@@ -16,12 +16,10 @@ namespace linked_list
             l1.Add(4);
             l1.Add(5);
             l1.Add(6);
-            for (int i = 0; i < 6; ++i)
-            {
-                Console.WriteLine(l1.Head);
-                l1.Del(i);
-            }
-
+            Console.WriteLine(l1.Head);
+            l1.Del(1);
+            Console.WriteLine(l1.Head);
+            Console.ReadLine();
         }
     }
 }
