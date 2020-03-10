@@ -12,7 +12,7 @@ namespace linked_list.Model
             get => data; //?
             set
             {
-                if (data != null) data = value;
+                if (value != null) data = value;
                 else throw new ArgumentNullException(nameof(value));
             }
         }
@@ -21,7 +21,7 @@ namespace linked_list.Model
 
         public Item(T Data)
         {
-            Data = data;
+            this.Data = Data;
         }
         public override string ToString()
         {
