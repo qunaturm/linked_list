@@ -5,7 +5,7 @@ namespace linked_list.Model
     public class LinkedList<T>
     {
         public Item<T> Head { get; private set; }
-        public Item<T> Tail { get; private set }
+        public Item<T> Tail { get; private set; }
         public int count { get; private set; }
 
         public LinkedList()
