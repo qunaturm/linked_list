@@ -18,27 +18,29 @@ namespace linked_list.Model
         public LinkedList(T Data)
         {
             Item<T> item = new Item<T>(Data); // or var itm = new Item<T>(Data);
-            SetHeadAndTail(item);
+            SetHeadAndTail(Data);
         }
 
         public void Add(T data)
         {
-            Item <T> item = new Item<T>(data);
             if (Tail != null)
             {
+                Item<T> item = new Item<T>(data);
                 Tail.Next = item;
                 Tail = item;
                 Count += 1;
             }
             else
             {
-                SetHeadAndTail(item);
+                SetHeadAndTail(data);
             }
         }
-        private void SetHeadAndTail(Item<T> data)
+        private void SetHeadAndTail(T data)
         {
-            Head = data;
-            Tail = data;
+            Item<T> item = new Item<T>(data);
+
+            Head = item;
+            Tail = item;
             Count = 1;
 
         }
