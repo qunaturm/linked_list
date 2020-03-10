@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 
 namespace linked_list.Model
 {
@@ -27,5 +28,6 @@ namespace linked_list.Model
         {
             return Data.ToString();
         }
+
     }
 }

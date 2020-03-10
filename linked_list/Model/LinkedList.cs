@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Collections;
 
 namespace linked_list.Model
 {
-    public class LinkedList<T>
+    public class LinkedList<T> : IEnumerable
     {
         public Item<T> Head { get; private set; }
         public Item<T> Tail { get; private set; }
@@ -79,6 +80,16 @@ namespace linked_list.Model
             Tail = item;
             Count = 1;
 
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            Item<T> currrent = Head;
+            while(currrent != null)
+            {
+                yield return currrent.Data;
+                currrent = currrent.Next;
+            }
         }
     }
 }

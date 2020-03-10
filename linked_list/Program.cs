@@ -10,15 +10,15 @@ namespace linked_list
     {
         static void Main(string[] args)
         {
-            Model.LinkedList<int> l1 = new Model.LinkedList<int>(1); // or var l1 = new Model.LinkedList<int>(7);
+            Model.LinkedList<int> l1 = new Model.LinkedList<int>(1);
             l1.Add(2);
             l1.Add(3);
             l1.Add(4);
             l1.Add(5);
-            l1.Add(6);
-            Console.WriteLine(l1.Head);
-            l1.Del(1);
-            Console.WriteLine(l1.Head);
+            foreach (var item in l1)
+            {
+                Console.Write(item + " ");
+            }
             Console.ReadLine();
         }
     }
